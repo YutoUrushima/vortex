@@ -1,0 +1,40 @@
+$base-color: #90ce9c;
+
+.nirvana__header {
+  background-color: $base-color;
+  padding: 1rem;
+  &-title {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    letter-spacing: -1px;
+  }
+}
+
+.nirvana__main {
+  padding: 10rem 0;
+  display: flex;
+  justify-content: center;
+  &-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  &-input {
+    outline: solid 4px $base-color;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  &-label {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.nirvana__footer {
+  background-color: $base-color;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
