@@ -1,4 +1,4 @@
-# Nirvana
+# Vortex
 
 Service that converts Japanese addresses into English notation and displays them in English
 
