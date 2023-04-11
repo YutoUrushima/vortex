@@ -1,6 +1,6 @@
 $base-color: #90ce9c;
 
-.nirvana__header {
+.vortex__header {
   background-color: $base-color;
   padding: 1rem;
   &-title {
@@ -11,7 +11,7 @@ $base-color: #90ce9c;
   }
 }
 
-.nirvana__main {
+.vortex__main {
   padding: 10rem 0;
   display: flex;
   justify-content: center;
@@ -32,7 +32,25 @@ $base-color: #90ce9c;
   }
 }
 
-.nirvana__footer {
+.vortex__address {
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.vortex__result {
+  background-color: #f0f0f0;
+  padding: 3rem;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  &-address {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.vortex__footer {
   background-color: $base-color;
   padding: 1rem 0;
   display: flex;

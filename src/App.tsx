@@ -4,19 +4,12 @@ import axios from "axios";
 
 import PostalCodeForm from "./components/PostalCodeForm";
 import DisplayConverted from "./components/DisplayConverted";
-import AddressForm from "./components/AddressForm";
+import DisplayPostalCodeResult from "./components/DisplayPostalCodeResult";
 
-interface AdressElement {
-  pref: string | null;
-  city: string | null;
-  town: string | null;
-  prefHiragana: string | null;
-  cityHiragana: string | null;
-  townHiragana: string | null;
-}
+import { AddressFormat } from "./models/Address";
 
 const App: React.FC = () => {
-  const [address, setAddress] = useState<AdressElement>({
+  const [address, setAddress] = useState<AddressFormat>({
     pref: null,
     city: null,
     town: null,
@@ -46,40 +39,20 @@ const App: React.FC = () => {
       .catch((error) => console.log(error));
   };
 
-  const fetchHiragana = async (text: string) => {
-    await axios
-      .post("https://labs.goo.ne.jp/api/hiragana", {
-        app_id: process.env.REACT_APP_GOO_LAB_APP_KEY,
-        sentence: text,
-        output_type: "hiragana",
-      })
-      .then((res) => console.log(res.data.converted))
-      .catch((error) => console.error(error));
-  };
-
   return (
     <div className="App">
-      <header className="nirvana__header">
-        <h1 className="nirvana__header-title">Address Converter</h1>
+      <header className="vortex__header">
+        <h1 className="vortex__header-title">Address Converter</h1>
       </header>
-      <main className="nirvana__main">
-        <div className="nirvana__main-wrapper">
+      <main className="vortex__main">
+        <div className="vortex__main-wrapper">
           <h2>First, enter your zip code in the form below</h2>
           <PostalCodeForm onSubmitForm={fetchPostalCode} />
-          <DisplayConverted displayConverted={address.pref!} />
-          {address.pref ? (
-            <Fragment>
-              <p>
-                Address: {address.pref} {address.city} {address.town}
-              </p>
-              <AddressForm onSubmnitForm={fetchHiragana} />
-            </Fragment>
-          ) : (
-            <div>Nothing</div>
-          )}
+          {/* <DisplayConverted displayConverted={address.pref!} /> */}
+          {address.pref ? <DisplayPostalCodeResult address={address} /> : <Fragment></Fragment>}
         </div>
       </main>
-      <footer className="nirvana__footer">
+      <footer className="vortex__footer">
         <small>&copy; Address Converter 2023</small>
       </footer>
     </div>

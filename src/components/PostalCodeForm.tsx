@@ -12,8 +12,8 @@ const PostalCodeForm: React.FC<PostalCodeProps> = (props) => {
   };
 
   return (
-    <form className="nirvana__main-form" onSubmit={submitHandler}>
-      <input className="nirvana__main-input" type="text" name="nirvana-address" id="nirvara-postalCode" />
+    <form className="vortex__main-form" onSubmit={submitHandler}>
+      <input className="vortex__main-input" type="text" name="vortex-address" id="nirvara-postalCode" />
       <button type="submit">Search</button>
     </form>
   );

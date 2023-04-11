@@ -4,13 +4,13 @@ interface AddressFormProp {
   onSubmnitForm: (text: string) => void;
 }
 
-const AddressForm: React.FC<AddressFormProp> = () => {
+const AddressForm: React.FC<AddressFormProp> = (props) => {
   return (
-    <form className="nirvana__address-form">
-      <label className="nirvana__main-label" htmlFor="nirvara-address">
-        Input your address
+    <form className="vortex__address-form">
+      <label className="vortex__main-label" htmlFor="nirvara-address">
+        Please enter the address after the town
       </label>
-      <input className="nirvana__main-input" type="text" name="nirvana-address" id="nirvara-address" />
+      <input className="vortex__main-input" type="text" name="vortex-address" id="nirvara-address" />
       <button type="submit">Execute</button>
     </form>
   );
